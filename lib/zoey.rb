@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require 'yaml'
-require 'pry'
 
 # Use yaml to support tagging feature
 # zoey ls @work
@@ -38,7 +37,6 @@ class Zoey
         end
       end
     end
-    binding.pry
     @items
   end
 
@@ -118,7 +116,7 @@ class Zoey
       puts "  delete NUM      Removes a todo"
       puts "  done NUM        Completes a todo"
       puts "  list [CONTEXT]  Lists all active todos"
-    else 
+    else
       puts "Hmm, I do not know how to perform this task.."
     end
   end

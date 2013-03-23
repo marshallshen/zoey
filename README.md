@@ -1,22 +1,25 @@
-# Zoey: todo list for programmers
-Introduce Zoey, a small todo command line tool that makes your life
-further integrated with your shell. Currently supporting .zsh
-configuration.
-
-# TODOs:
-- Look at [HomeBrew](https://github.com/marshallshen/zoey.git) and learn how to manage shell scripts
-- Fix install.sh
-- Local test (caution: no test guarantee, big danger..)
-- Zoey-ify command messages
-- Write up step-by-step instructions
-
+# Zoey: todo list for Rubyists
+Introduce Zoey, a small todo command tool for Rubyists.
 ##Setup
 
 ###Via `curl`
 ```
 curl -L https://github.com/marshallshen/zoey/config/install.sh | sh
 ```
+
+After the set up, paste the follow to the bash file of your choice (.bashrc, .zshrc, etc)
+```
+alias zoey="~/./.zoey/lib/zoey.rb"
+```
 ##Manual Install
 ```
 git clone git://github.com/marshallshen/zoey.git ~/.zoey
+```
+You need to grant execution for the file:
+```
+chmod +x ./zoey/lib/zoey.rb
+```
+After the set up, paste the follow to the bash file of your choice (.bashrc, .zshrc, etc)
+```
+alias zoey="~/./.zoey/lib/zoey.rb"
 ```
