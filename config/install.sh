@@ -1,6 +1,13 @@
+echo "\033[;34mChecking Ruby.. \033[0m"
+which ruby >/dev/null && echo "Ruby is installed" || {
+  echo "ruby is not installed"
+  exit
+}
+
 if [ -d ~/.zoey ]
 then
-  echo "\033[0;33mYo, I think you already have me installed.\033[0m I suggest to remove ~/.zoey But I will let Deciders decide I am just a suggestor!"
+  echo "\033[0;33mYo, I think you already have me installed.\033[0m"
+  echo "\033[0;33mI suggest to remove ~/.zoey But I will let Deciders decide I am just a suggestor!\033[0m"
   exit
 fi
 
@@ -13,7 +20,7 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/marshallshen/zo
 echo "\033[0;34mInstalling Zoey...\033[0m"
 if [ -d ~/.zoey ]
 then
-  filename= "/.zoey/lib/zoey.rb"
+  filename= "~/.zoey/lib/zoey.rb"
   chmod +x "$filename"
   echo "Zoey installed"
   exit
