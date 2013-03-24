@@ -18,7 +18,7 @@ git clone git://github.com/marshallshen/zoey.git ~/.zoey
 ```
 You need to grant execution for the file:
 ```
-chmod +x ./zoey/lib/zoey.rb
+chmod +x ~/.zoey/lib/zoey.rb
 ```
 After the set up, paste the follow to the bash file of your choice (.bashrc, .zshrc, etc)
 ```
