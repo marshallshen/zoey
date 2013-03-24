@@ -1,5 +1,7 @@
 # Zoey: todo list for Rubyists
+<img src="zoey.png" />
 Introduce Zoey, a small todo command tool for Rubyists.
+
 ##Setup
 
 ###Via `curl`
