@@ -13,7 +13,7 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/marshallshen/zo
 echo "\033[0;34mInstalling Zoey...\033[0m"
 if [ -d ~/.zoey ]
 then
-  filename= "~/.zoey/lib/zoey.rb"
+  filename= "/.zoey/lib/zoey.rb"
   chmod +x "$filename"
   echo "Zoey installed"
   exit
