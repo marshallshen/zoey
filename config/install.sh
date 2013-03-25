@@ -17,15 +17,6 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/marshallshen/zo
   exit
 }
 
-echo "\033[0;34mInstalling Zoey...\033[0m"
-if [ -d ~/.zoey ]
-then
-  filename= "~/.zoey/lib/zoey.rb"
-  chmod +x "$filename"
-  echo "Zoey installed"
-  exit
-fi
-
 echo "\033[0;32m"' _______ _______ _______         '"\033[0m"
 echo "\033[0;32m"'/ ___   |  ___  |  ____ \\     /|'"\033[0m"
 echo "\033[0;32m"'\/   )  | (   ) | (    \( \   / )'"\033[0m"

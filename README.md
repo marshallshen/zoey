@@ -8,7 +8,8 @@ preferrable.
 
 ###Via `curl`
 ```
-curl -L curl -L https://raw.github.com/marshallshen/zoey/master/config/install.sh | sh
+curl -L
+https://raw.github.com/marshallshen/zoey/master/config/install.sh | sh
 ```
 After the set up, paste the follow to the bash file of your choice (.bashrc, .zshrc, etc)
 ```
