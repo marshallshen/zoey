@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'yaml'
+require 'net/smtp'
 
 # Use yaml to support tagging feature
 # zoey ls @work
@@ -97,6 +98,19 @@ class Zoey
     end
   end
 
+  def email(email)
+   msg = <<END_OF_MESSAGE
+From: #{email}
+To: #{email}
+Subject: "Zoey: here's your today's todo list"
+
+Hi, 
+Here is your todo list for today!
+
+#{@items.each {|item| item.to_s}}
+END_OF_MESSAGE
+  end
+
   if __FILE__ == $0
     case ARGV[0]
     when 'list','ls'
@@ -107,6 +121,8 @@ class Zoey
       puts "Deleted: #{Zoey.new.delete!(ARGV[1])}"
     when 'check', 'done'
       puts "Check: #{Zoey.new.check(ARGV[1])}"
+    when 'email'
+      puts "Email: #{Zoey.new.email(ARGV[1])}"
     when 'clear'
       puts "All #{Zoey.new.clear!} todos cleared!"
     when 'help'
@@ -116,6 +132,7 @@ class Zoey
       puts "  delete NUM      Removes a todo"
       puts "  done NUM        Completes a todo"
       puts "  list [CONTEXT]  Lists all active todos"
+      puts "  email [EMAIL]   Email todo list"
     else
       puts "Hmm, I do not know how to perform this task.."
     end
