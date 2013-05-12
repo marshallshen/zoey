@@ -19,7 +19,13 @@ class Item
 end
 
 class Zoey
-  FILE_PATH = "#{File.dirname(__FILE__)}/logs/#{Time.now.strftime('%Y%m%d')}.txt"
+  # Thi is the daily mode, but it gets unpopular among users..
+  # FILE_PATH = "#{File.dirname(__FILE__)}/logs/#{Time.now.strftime('%Y%m%d')}.txt"
+
+
+  # Thi is the one-file mode
+  FILE_PATH = "#{File.dirname(__FILE__)}/logs/zoey.txt"
+
   attr_accessor :items
 
   def initialize(options = {})
@@ -104,11 +110,19 @@ From: #{email}
 To: #{email}
 Subject: "Zoey: here's your today's todo list"
 
-Hi, 
+Hi,
 Here is your todo list for today!
 
 #{@items.each {|item| item.to_s}}
 END_OF_MESSAGE
+
+
+    Net::SMTP.start(localhost, 25) do |smtp|
+        smtp.send_message msg,
+                      email,
+                      email
+
+    end
   end
 
   if __FILE__ == $0
