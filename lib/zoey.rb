@@ -105,7 +105,7 @@ class Zoey
   end
 
   def email(email)
-   msg = <<END_OF_MESSAGE
+   msg = <<MESSAGE_END
 From: #{email}
 To: #{email}
 Subject: "Zoey: here's your today's todo list"
@@ -114,14 +114,11 @@ Hi,
 Here is your todo list for today!
 
 #{@items.each {|item| item.to_s}}
-END_OF_MESSAGE
+MESSAGE_END
 
 
-    Net::SMTP.start('localhost', 25) do |smtp|
-        smtp.send_message msg,
-                      email,
-                      email
-
+    Net::SMTP.start('localhost') do |smtp|
+        smtp.send_message msg, email, email
     end
   end
 
