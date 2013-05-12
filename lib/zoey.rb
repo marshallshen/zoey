@@ -117,7 +117,7 @@ Here is your todo list for today!
 END_OF_MESSAGE
 
 
-    Net::SMTP.start(localhost, 25) do |smtp|
+    Net::SMTP.start('localhost', 25) do |smtp|
         smtp.send_message msg,
                       email,
                       email
