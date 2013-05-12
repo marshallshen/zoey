@@ -3,7 +3,7 @@ Introduce Zoey, a small todo command tool for Rubyists.
 
 ##Setup
 ###Prerequsite
-You must have ruby 1.9.3 or above installed. Ruby 2.0.0 or above is
+You must have ruby 1.9.3 or above installed. Ruby 2.0.0 is
 preferrable.
 
 ###Via `curl`
